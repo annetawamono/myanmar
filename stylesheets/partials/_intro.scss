@@ -1,11 +1,30 @@
 #intro {
   background-color: $blue-shade3;
 
-  h2 {
+  h3, i {
     color: $black;
   }
 
   div.story {
-    width: 300px;
+    width: 66.6%;
+    margin: 0 auto 0 auto;
+    position: relative;
+    top: 40%;
+    display: none;
+    text-align: center;
+  }
+
+  div.nav-buttons {
+    position: absolute;
+    bottom: 33.3%;
+    width: 100%;
+    text-align: center;
+    i {
+      font-size: 36px;
+    }
+  }
+
+  div.story.active {
+    display: block;
   }
 }
