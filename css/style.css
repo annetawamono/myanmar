@@ -88,5 +88,11 @@ section.active {
 #selection > div {
   height: 100vh;
   overflow: hidden; }
+#selection div#content {
+  background: url(../assets/images/17040030_bw.jpg) center 105%;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+  background-color: white; }
 
 /*# sourceMappingURL=style.css.map */
