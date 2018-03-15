@@ -14,7 +14,12 @@ function navIntro() {
         $(this).addClass("active");
       });
     } else if($(this).attr('id') == "part-4") {
-      console.log("end of intro");
+      $('#intro').fadeOut("fast", function() {
+        $(this).removeClass('active');
+        $('#selection').fadeIn(5000, function() {
+          $(this).addClass('active');
+        })
+      });
     }
   });
 }

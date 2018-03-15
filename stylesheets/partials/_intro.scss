@@ -1,7 +1,7 @@
 #intro {
-  background-color: $blue-shade3;
+  background-color: $white;
 
-  h3, i {
+  h3 {
     color: $black;
   }
 
@@ -12,6 +12,10 @@
     top: 40%;
     display: none;
     text-align: center;
+
+    &.active {
+      display: block;
+    }
   }
 
   div.nav-buttons {
@@ -22,9 +26,5 @@
     i {
       font-size: 36px;
     }
-  }
-
-  div.story.active {
-    display: block;
   }
 }

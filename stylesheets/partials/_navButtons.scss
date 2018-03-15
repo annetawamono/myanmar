@@ -1,0 +1,11 @@
+div.nav-buttons {
+  i {
+    color: $black;
+    transition: transform .3s ease-out;
+
+    &:hover {
+      color: $highlight;
+      transform: translateY(-5px);
+    }
+  }
+}
