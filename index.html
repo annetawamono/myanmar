@@ -10,6 +10,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="js/anime.min.js"></script>
+      <script type="text/javascript" src="js/charming.min.js" charset="utf-8"></script>
   </head>
   <body>
     <section id="intro" class="active">
@@ -30,13 +31,25 @@
       </div>
     </section>
     <section id="selection" class="row">
-      <div id="content" class="col-sm-6 col-md-4 col-lg-4">boo</div>
-      <div id="googleMap" class="col-sm-6 col-md-8 col-lg-8"></div>
+      <div id="content" class="col-sm-6 col-md-4 col-lg-4">
+        <h1 id="title-1" class="title">Yangon</h1>
+      </div>
+      <div id="map-nav" class="col-sm-6 col-md-8 col-lg-8">
+        <div class="row">
+          <div id="googleMap" class="col-sm-12 col-md-12 col-lg-12"></div>
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="nav-buttons">
+              <i class="fa fa-arrow-circle-o-left"></i>
+              <i class="fa fa-arrow-circle-o-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="gallery"></section>
   </body>
-  <script src="js/intro.js" charset="utf-8"></script>
-  <script src="js/map.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/intro.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/map.js" charset="utf-8"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxrjSHTGbsVbNaqytnehU2Pup5QxinFP0&callback=myMap"></script>
-  <script src="js/main.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
 </html>

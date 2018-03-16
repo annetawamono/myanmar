@@ -4,7 +4,7 @@ div.nav-buttons {
     transition: transform .3s ease-out;
 
     &:hover {
-      color: $highlight;
+      color: $highlight !important;
       transform: translateY(-5px);
     }
   }

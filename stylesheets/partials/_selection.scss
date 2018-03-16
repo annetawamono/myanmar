@@ -11,5 +11,31 @@
     background-blend-mode: luminosity;
     // opacity: 0.5;
     background-color: white;
+    padding-left: 50px;
+  }
+
+  div#map-nav>div.row {
+    height: 100%;
+
+    > div:nth-child(1) {
+      height: 90%;
+    }
+
+    > div:nth-child(2) {
+      background-color: $black;
+      height: 10%;
+    }
+  }
+
+  div.nav-buttons {
+    text-align: center;
+    position: relative;
+    top: 20%;
+
+    i {
+      color: white;
+      font-size: 32px;
+      padding: 5px;
+    }
   }
 }

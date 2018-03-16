@@ -1,13 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Nanum+Pen+Script|Playfair+Display+SC:900');
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-nanum;
+  font-family: $font-play;
+}
+
+h1 {
+  font-size: 72px;
+  // color: $blue-shade1;
 }
 
 h3 {
+  font-family: $font-nanum;
   font-size: 28px;
 }
 
 p, ul, li, a {
-  font-family: $font-open;
+  font-family: $font-ibm;
 }
