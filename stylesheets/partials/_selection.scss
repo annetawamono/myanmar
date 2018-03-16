@@ -11,7 +11,18 @@
     background-blend-mode: luminosity;
     // opacity: 0.5;
     background-color: white;
-    padding-left: 50px;
+    padding-left: 2%;
+
+    h1 {
+      position: relative;
+
+      > span {
+        @include transform-style(preserve-3d);
+        @include perspective(1000px);
+        transform: rotateZ(-180deg);
+        // opacity: 0;
+      }
+    }
   }
 
   div#map-nav>div.row {

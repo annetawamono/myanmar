@@ -1,0 +1,9 @@
+@mixin transform-style($type) {
+  -webkit-transform-style: $type;
+  transform-style: $type;
+}
+
+@mixin perspective($px) {
+  -webkit-perspective: $px;
+	perspective: $px;
+}
