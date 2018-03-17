@@ -18,6 +18,7 @@ function navIntro() {
         $(this).removeClass('active');
         $('#selection').fadeIn(5000, function() {
           $(this).addClass('active');
+          InAnim[0].play();
         })
       });
     }

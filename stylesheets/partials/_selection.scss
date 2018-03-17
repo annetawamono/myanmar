@@ -14,13 +14,14 @@
     padding-left: 2%;
 
     h1 {
-      position: relative;
+      position: absolute;
+      top: 0;
 
       > span {
         @include transform-style(preserve-3d);
         @include perspective(1000px);
         display: inline-block;
-        // opacity: 0;
+        opacity: 0;
       }
     }
   }

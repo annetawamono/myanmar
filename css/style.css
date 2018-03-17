@@ -100,13 +100,15 @@ section.active {
   background-color: white;
   padding-left: 2%; }
   #selection div#content h1 {
-    position: relative; }
+    position: absolute;
+    top: 0; }
     #selection div#content h1 > span {
       -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
       -webkit-perspective: 1000px;
       perspective: 1000px;
-      display: inline-block; }
+      display: inline-block;
+      opacity: 0; }
 #selection div#map-nav > div.row {
   height: 100%; }
   #selection div#map-nav > div.row > div:nth-child(1) {
