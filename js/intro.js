@@ -1,3 +1,5 @@
+var InAnim = [];
+
 function navIntro() {
   $('div.story.active').fadeOut("slow", function() {
     $(this).removeClass("active");
@@ -16,7 +18,7 @@ function navIntro() {
     } else if($(this).attr('id') == "part-4") {
       $('#intro').fadeOut("fast", function() {
         $(this).removeClass('active');
-        $('#selection').fadeIn(5000, function() {
+        $('#selection').fadeIn(3000, function() {
           $(this).addClass('active');
           InAnim[0].play();
         })

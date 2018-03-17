@@ -19,13 +19,13 @@ $(function() {
   });
 
   //  Selection Title Anim
-  var InAnim = [], OutAnim = [], selection = "yangon", count = 0;
+  var OutAnim = [], selection = "yangon", count = 0;
 
   const element = document.querySelector('#content h1#title-1');
   charming(element);
 
   const element2 = document.querySelector('#content h1#title-2');
-  charming(element);
+  charming(element2);
 
   var titleInAnim = anime.timeline({
     autoplay: false
@@ -67,19 +67,44 @@ $(function() {
 
   InAnim.push(title2InAnim);
 
+  InAnim[0].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      InAnim[count%2].play();
+      anim.reversed = false;
+    }
+  }
+
+  InAnim[1].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      InAnim[count%2].play();
+      anim.reversed = false;
+    }
+  }
+
   $('#map-nav .fa-arrow-circle-o-right').click(function() {
     // console.log(InAnim[0]);
     // if (InAnim[0].reversed) {
     //   InAnim[0].reverse();
     // }
     // InAnim[0].play();
+
+    var mod = count%InAnim.length;
+    console.log("mod:" + mod + " count:" + count);
+    console.log(InAnim[mod]);
+
+    if(!InAnim[mod].reversed) {
+      count++;
+      InAnim[mod].reverse();
+      InAnim[mod].play();
+      // InAnim[mod+1].play();
+    }
   });
 
   $('#map-nav .fa-arrow-circle-o-left').click(function() {
-    // console.log(InAnim[0]);
-    // if (!InAnim[0].reversed) {
-    //   InAnim[0].reverse();
-    // }
-    //   InAnim[0].play();
+    console.log(InAnim[0]);
+    if (!InAnim[0].reversed) {
+      InAnim[0].reverse();
+    }
+      InAnim[0].play();
   });
 });
