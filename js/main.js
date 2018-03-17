@@ -24,9 +24,10 @@ $(function() {
 
   var titleAnim = anime({
     targets: '#content h1#title-1>span',
-    rotateZ: [-180,180],
-    // opacity: 1,
+    rotateY: [-180,0],
+    opacity: 1,
     easing: 'easeInCubic',
+    elasticity: 100,
     delay: function(el, i, l) { return i * 100; },
     autoplay: false
   });
