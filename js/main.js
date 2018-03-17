@@ -19,18 +19,32 @@ $(function() {
   });
 
   //  Selection Title Anim
+  var InAnim = [], OutAnim = [];
+
   const element = document.querySelector('#content h1');
   charming(element);
 
-  var titleAnim = anime({
-    targets: '#content h1#title-1>span',
-    rotateY: [-180,0],
-    opacity: 1,
-    easing: 'easeInCubic',
-    elasticity: 100,
-    delay: function(el, i, l) { return i * 100; },
+  var titleInAnim = anime.timeline({
     autoplay: false
   });
 
-  $('#content h1').click(titleAnim.play);
+  titleInAnim.add({
+    targets: '#content h1#title-1',
+    top: ['30%','40%'],
+    easing: 'easeInOutQuart'
+  }).add({
+    targets: '#content h1#title-1>span',
+    rotateY: [-45,0],
+    opacity: [0,1],
+    offset: '-=600',
+    easing: 'easeInCubic',
+    elasticity: 100,
+    delay: function(el, i, l) { return i * 50; }
+  });
+
+  InAnim.push(titleInAnim);
+
+  $('#map-nav .fa-arrow-circle-o-right').click(function(){
+    titleInAnim.play();
+  });
 });

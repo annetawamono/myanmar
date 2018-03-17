@@ -106,8 +106,7 @@ section.active {
       transform-style: preserve-3d;
       -webkit-perspective: 1000px;
       perspective: 1000px;
-      display: inline-block;
-      opacity: 0; }
+      display: inline-block; }
 #selection div#map-nav > div.row {
   height: 100%; }
   #selection div#map-nav > div.row > div:nth-child(1) {

@@ -19,9 +19,8 @@
       > span {
         @include transform-style(preserve-3d);
         @include perspective(1000px);
-        // transform: rotateY(180deg);
         display: inline-block;
-        opacity: 0;
+        // opacity: 0;
       }
     }
   }
