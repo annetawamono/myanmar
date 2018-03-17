@@ -19,13 +19,16 @@ $(function() {
   });
 
   //  Selection Title Anim
-  var OutAnim = [], selection = "yangon", count = 0;
+  var selection = "yangon", count = 0;
 
   const element = document.querySelector('#content h1#title-1');
   charming(element);
 
   const element2 = document.querySelector('#content h1#title-2');
   charming(element2);
+
+  const element3 = document.querySelector('#content h1#title-3');
+  charming(element3);
 
   var titleInAnim = anime.timeline({
     autoplay: false
@@ -39,7 +42,7 @@ $(function() {
     targets: '#content h1#title-1>span',
     rotateY: [-45,0],
     opacity: [0,1],
-    offset: '-=600',
+    offset: '-=900',
     easing: 'easeInCubic',
     elasticity: 100,
     delay: function(el, i, l) { return i * 50; }
@@ -59,7 +62,7 @@ $(function() {
     targets: '#content h1#title-2>span',
     rotateY: [-45,0],
     opacity: [0,1],
-    offset: '-=600',
+    offset: '-=900',
     easing: 'easeInCubic',
     elasticity: 100,
     delay: function(el, i, l) { return i * 50; }
@@ -67,44 +70,68 @@ $(function() {
 
   InAnim.push(title2InAnim);
 
+  var title3InAnim = anime.timeline({
+    autoplay: false
+  });
+
+  title3InAnim.add({
+    targets: '#content h1#title-3',
+    top: ['30%','40%'],
+    easing: 'easeInOutQuart'
+  }).add({
+    targets: '#content h1#title-3>span',
+    rotateY: [-45,0],
+    opacity: [0,1],
+    offset: '-=900',
+    easing: 'easeInCubic',
+    elasticity: 100,
+    delay: function(el, i, l) { return i * 50; }
+  });
+
+  InAnim.push(title3InAnim);
+
   InAnim[0].update = function (anim) {
     if(anim.reversed && anim.progress == 0) {
-      InAnim[count%2].play();
+      InAnim[count%InAnim.length].play();
       anim.reversed = false;
     }
   }
 
   InAnim[1].update = function (anim) {
     if(anim.reversed && anim.progress == 0) {
-      InAnim[count%2].play();
+      InAnim[count%InAnim.length].play();
       anim.reversed = false;
     }
   }
 
-  $('#map-nav .fa-arrow-circle-o-right').click(function() {
-    // console.log(InAnim[0]);
-    // if (InAnim[0].reversed) {
-    //   InAnim[0].reverse();
-    // }
-    // InAnim[0].play();
+  InAnim[2].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      InAnim[count%InAnim.length].play();
+      anim.reversed = false;
+    }
+  }
 
+  function changeForward() {
     var mod = count%InAnim.length;
-    console.log("mod:" + mod + " count:" + count);
-    console.log(InAnim[mod]);
 
     if(!InAnim[mod].reversed) {
       count++;
       InAnim[mod].reverse();
       InAnim[mod].play();
-      // InAnim[mod+1].play();
     }
-  });
+  }
 
-  $('#map-nav .fa-arrow-circle-o-left').click(function() {
-    console.log(InAnim[0]);
-    if (!InAnim[0].reversed) {
-      InAnim[0].reverse();
+  function changeBack() {
+    var mod = count%InAnim.length;
+
+    if(!InAnim[mod].reversed) {
+      count--;
+      InAnim[mod].reverse();
+      InAnim[mod].play();
     }
-      InAnim[0].play();
-  });
+  }
+
+  $('#map-nav .fa-arrow-circle-o-right').click(changeForward);
+
+  $('#map-nav .fa-arrow-circle-o-left').click(changeBack);
 });
