@@ -1,3 +1,10 @@
+var selection = [
+  {name: "yangon", marker: new Marker(16.783144, 96.153397)},
+  {name: "kalaw", marker: new Marker(20.624008, 96.569014)},
+  {name: "maymyo", marker: new Marker(21.993679, 96.469474)}
+];
+var count = 0;
+
 $(function() {
   //  Intro Event Handlers
   $('#intro div.nav-buttons>i').click(navIntro);
@@ -19,7 +26,6 @@ $(function() {
   });
 
   //  Selection Title Anim
-  var selection = "yangon", count = 0;
 
   const element = document.querySelector('#content h1#title-1');
   charming(element);
@@ -94,6 +100,7 @@ $(function() {
     if(anim.reversed && anim.progress == 0) {
       InAnim[count%InAnim.length].play();
       anim.reversed = false;
+      selection[count%InAnim.length].marker.addMarker();
     }
   }
 
@@ -101,6 +108,7 @@ $(function() {
     if(anim.reversed && anim.progress == 0) {
       InAnim[count%InAnim.length].play();
       anim.reversed = false;
+      selection[count%InAnim.length].marker.addMarker();
     }
   }
 
@@ -108,27 +116,13 @@ $(function() {
     if(anim.reversed && anim.progress == 0) {
       InAnim[count%InAnim.length].play();
       anim.reversed = false;
+      selection[count%InAnim.length].marker.addMarker();
     }
   }
 
-  function changeForward() {
-    var mod = count%InAnim.length;
-
-    if(!InAnim[mod].reversed) {
-      count++;
-      InAnim[mod].reverse();
-      InAnim[mod].play();
-    }
-  }
-
-  function changeBack() {
-    var mod = count%InAnim.length;
-
-    if(!InAnim[mod].reversed) {
-      count--;
-      InAnim[mod].reverse();
-      InAnim[mod].play();
-    }
+  for (var i = 0; i < selection.length; i++) {
+    // console.log(selection[i].marker);
+    selection[i].marker.setClick();
   }
 
   $('#map-nav .fa-arrow-circle-o-right').click(changeForward);
