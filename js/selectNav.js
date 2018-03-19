@@ -6,6 +6,8 @@ function changeForward() {
     count++;
     InAnim[mod].reverse();
     InAnim[mod].play();
+    $(".sub").removeClass('active');
+    $(selection[count%selection.length].sub).addClass('active');
   }
 }
 
@@ -17,5 +19,7 @@ function changeBack() {
     count--;
     InAnim[mod].reverse();
     InAnim[mod].play();
+    $(".sub").removeClass('active');
+    $(selection[count%selection.length].sub).addClass('active');
   }
 }

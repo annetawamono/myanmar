@@ -24,6 +24,17 @@
         // opacity: 0;
       }
     }
+
+    h2.sub {
+      font-size: 25px;
+      position: absolute;
+      top: 50%;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
   }
 
   div#map-nav>div.row {

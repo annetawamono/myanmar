@@ -48,7 +48,7 @@ h3 {
   font-family: "Nanum Pen Script", cursive;
   font-size: 28px; }
 
-p, ul, li, a {
+h2, p, ul, li, a {
   font-family: "IBM Plex Mono", monospace; }
 
 div.nav-buttons i {
@@ -108,6 +108,13 @@ section.active {
       -webkit-perspective: 1000px;
       perspective: 1000px;
       display: inline-block; }
+  #selection div#content h2.sub {
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    display: none; }
+    #selection div#content h2.sub.active {
+      display: block; }
 #selection div#map-nav > div.row {
   height: 100%; }
   #selection div#map-nav > div.row > div:nth-child(1) {
