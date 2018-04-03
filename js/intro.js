@@ -1,4 +1,5 @@
 var InAnim = [];
+var selection = [];
 
 function navIntro() {
   $('div.story.active').fadeOut("slow", function() {
@@ -21,6 +22,7 @@ function navIntro() {
         $('#selection').fadeIn(3000, function() {
           $(this).addClass('active');
           InAnim[0].play();
+          selection[0].marker.addMarker();
         })
       });
     }

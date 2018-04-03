@@ -1,4 +1,4 @@
-var selection = [
+selection = [
   {name: "yangon", marker: new Marker(16.783144, 96.153397), sub: "#sub-1"},
   {name: "kalaw", marker: new Marker(20.624008, 96.569014), sub: "#sub-2"},
   {name: "maymyo", marker: new Marker(21.993679, 96.469474), sub: "#sub-3"}
