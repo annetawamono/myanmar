@@ -1,63 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>For Laura</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="css/style.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-      <script type="text/javascript" src="js/anime.min.js"></script>
-      <script type="text/javascript" src="js/charming.min.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <section id="intro" class="active">
-      <div id="part-1" class="story active">
-        <h3>Dear Laura</h3>
-      </div>
-      <div id="part-2" class="story">
-        <h3>December 2017 I gave you a disposable camera to take with you on your holidays. I bought myself a disposable camera too to take with me to Myanmar. Even though we weren't dating yet, I wanted us to share somthing personal with each other, for each other.</h3>
-      </div>
-      <div id="part-3" class="story">
-        <h3>I love the pictures you took for me and the photo album you made. I don't have any old books that I can cut up, but I guess this is my version of an album. So here it is...</h3>
-      </div>
-      <div id="part-4" class="story">
-        <h3>Just for you.</h3>
-      </div>
-      <div class="nav-buttons nav-buttons-horizontal">
-        <i class="fa fa-arrow-circle-o-right"></i>
-      </div>
-    </section>
-    <section id="selection" class="row">
-      <div id="content" class="col-sm-6 col-md-4 col-lg-4">
-        <h1 id="title-1" class="title">Yangon</h1>
-        <h1 id="title-2" class="title">Kalaw</h1>
-        <h1 id="title-3" class="title">Maymyo</h1>
-        <h2 id="sub-1" class="sub active">(<span class="burmese">ရန်ကုန်</span>)</h2>
-        <h2 id="sub-2" class="sub">(<span class="burmese">ကလောမြို့</span>)</h2>
-        <h2 id="sub-3" class="sub">(<span class="burmese">မေမြို့</span>)</h2>
-      </div>
-      <div id="map-nav" class="col-sm-6 col-md-8 col-lg-8">
-        <div class="row">
-          <div id="googleMap" class="col-sm-12 col-md-12 col-lg-12"></div>
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <div class="nav-buttons">
-              <i class="fa fa-arrow-circle-o-left"></i>
-              <i class="fa fa-arrow-circle-o-right"></i>
-            </div>
+
+<head>
+  <meta charset="utf-8">
+  <title>For Laura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="js/anime.min.js"></script>
+  <script type="text/javascript" src="js/charming.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <section id="intro" class="active">
+    <div id="part-1" class="story active">
+      <h3>Dear Laura</h3>
+    </div>
+    <div id="part-2" class="story">
+      <h3>December 2017 I gave you a disposable camera to take with you on your holidays. I bought myself a disposable camera too to take with me to Myanmar. Even though we weren't dating yet, I wanted us to share somthing personal with each other, for each other.</h3>
+    </div>
+    <div id="part-3" class="story">
+      <h3>I love the pictures you took for me and the photo album you made. I don't have any old books that I can cut up, but I guess this is my version of an album. So here it is...</h3>
+    </div>
+    <div id="part-4" class="story">
+      <h3>Just for you.</h3>
+    </div>
+    <div class="nav-buttons nav-buttons-horizontal">
+      <i class="fa fa-arrow-circle-o-right"></i>
+    </div>
+  </section>
+  <section id="selection" class="row">
+    <div id="content" class="col-sm-6 col-md-4 col-lg-4">
+      <h1 id="title-1" class="title">Yangon</h1>
+      <h1 id="title-2" class="title">Kalaw</h1>
+      <h1 id="title-3" class="title">Maymyo</h1>
+      <h2 id="sub-1" class="sub active">(<span class="burmese">ရန်ကုန်</span>)</h2>
+      <h2 id="sub-2" class="sub">(<span class="burmese">ကလောမြို့</span>)</h2>
+      <h2 id="sub-3" class="sub">(<span class="burmese">မေမြို့</span>)</h2>
+    </div>
+    <div id="map-nav" class="col-sm-6 col-md-8 col-lg-8">
+      <div class="row">
+        <div id="googleMap" class="col-sm-12 col-md-12 col-lg-12"></div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="nav-buttons">
+            <i class="fa fa-arrow-circle-o-left"></i>
+            <i class="fa fa-arrow-circle-o-right"></i>
           </div>
         </div>
       </div>
-    </section>
-    <section id="gallery"></section>
-  </body>
-  <script type="text/javascript" src="js/intro.js" charset="utf-8"></script>
-  <script type="text/javascript" src="js/map.js" charset="utf-8"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxrjSHTGbsVbNaqytnehU2Pup5QxinFP0&callback=myMap"></script>
-  <script type="text/javascript" src="js/marker.js" charset="utf-8"></script>
-  <script type="text/javascript" src="js/selectNav.js" charset="utf-8"></script>
-  <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
+    </div>
+  </section>
+  <section id="gallery">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+
+        <div class="item active">
+          <img src="assets/images/yg_1.jpg" alt="Los Angeles" style="width:100%;">
+          <div class="carousel-caption">
+            <h3>Los Angeles</h3>
+            <p>LA is always so much fun!</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="assets/images/yg_2.jpg" alt="Chicago" style="width:100%;">
+          <div class="carousel-caption">
+            <h3>Chicago</h3>
+            <p>Thank you, Chicago!</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="assets/images/yg_3.jpg" alt="New York" style="width:100%;">
+          <div class="carousel-caption">
+            <h3>New York</h3>
+            <p>We love the Big Apple!</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+</body>
+<script type="text/javascript" src="js/intro.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/map.js" charset="utf-8"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxrjSHTGbsVbNaqytnehU2Pup5QxinFP0&callback=myMap"></script>
+<script type="text/javascript" src="js/marker.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/selectNav.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/main.js" charset="utf-8"></script>
+
 </html>

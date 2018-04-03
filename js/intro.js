@@ -21,6 +21,7 @@ function navIntro() {
         $(this).removeClass('active');
         $('#selection').fadeIn(3000, function() {
           $(this).addClass('active');
+          $('#gallery').addClass('active');
           InAnim[0].play();
           selection[0].marker.addMarker();
         })
