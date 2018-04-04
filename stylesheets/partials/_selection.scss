@@ -65,5 +65,16 @@
   #see-images {
     writing-mode: vertical-rl;
     text-orientation: sideways;
+    padding: 30px 10px 10px 10px;
+    position: relative;
+    left: 93%;
+    cursor: pointer;
+    -webkit-transition: left .3s ease-out, color .3s ease-out; /* Safari */
+    transition: left .3s ease-out, color .3s ease-out;
+
+    &:hover {
+      color: $highlight;
+      left: 95%;
+    }
   }
 }

@@ -24,4 +24,23 @@
     left: 0;
     top: 0;
   }
+
+  #back-to-map {
+    transform: rotate(-90deg);
+    position: relative;
+    width: 126px;
+    left: -44px;
+    top: 61px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: left .3s ease-out, color .3s ease-out; /* Safari */
+    transition: left .3s ease-out, color .3s ease-out;
+
+    &:hover {
+      color: $highlight;
+      left: -54px;
+    }
+  }
 }

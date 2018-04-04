@@ -131,10 +131,25 @@ $(function() {
 
   // Opens gallery
   $('#see-images').click(function(){
+    let $fade = $(this);
     $('#gallery').animate({
       width: 'toggle',
     }, 500, function() {
-      console.log('Finished');
+      $fade.fadeTo("fast", 0, function(){
+        $('#back-to-map').fadeTo("fast", 1);
+      });
+    });
+  });
+
+  // Closes gallery
+  $('#back-to-map').click(function(){
+    let $fade = $(this);
+    $('#gallery').animate({
+      width: 'toggle',
+    }, 500, function() {
+      $fade.fadeTo("fast", 0, function(){
+        $('#see-images').fadeTo("fast", 1);
+      });
     });
   });
 });

@@ -132,7 +132,17 @@ section.active {
     padding: 5px; }
 #selection #see-images {
   writing-mode: vertical-rl;
-  text-orientation: sideways; }
+  text-orientation: sideways;
+  padding: 30px 10px 10px 10px;
+  position: relative;
+  left: 93%;
+  cursor: pointer;
+  -webkit-transition: left .3s ease-out, color .3s ease-out;
+  /* Safari */
+  transition: left .3s ease-out, color .3s ease-out; }
+  #selection #see-images:hover {
+    color: #CA7679;
+    left: 95%; }
 
 #gallery {
   background-color: #444444;
@@ -156,5 +166,21 @@ section.active {
     #gallery {
       left: 0;
       top: 0; } }
+  #gallery #back-to-map {
+    transform: rotate(-90deg);
+    position: relative;
+    width: 126px;
+    left: -44px;
+    top: 61px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: left .3s ease-out, color .3s ease-out;
+    /* Safari */
+    transition: left .3s ease-out, color .3s ease-out; }
+    #gallery #back-to-map:hover {
+      color: #CA7679;
+      left: -54px; }
 
 /*# sourceMappingURL=style.css.map */
