@@ -128,4 +128,13 @@ $(function() {
   $('#map-nav .fa-arrow-circle-o-right').click(changeForward);
 
   $('#map-nav .fa-arrow-circle-o-left').click(changeBack);
+
+  // Opens gallery
+  $('#see-images').click(function(){
+    $('#gallery').animate({
+      width: 'toggle',
+    }, 500, function() {
+      console.log('Finished');
+    });
+  });
 });

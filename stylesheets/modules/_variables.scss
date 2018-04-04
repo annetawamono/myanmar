@@ -10,3 +10,9 @@ $blue-shade2: #A1BCB6;
 $blue-shade3: #BED2CD;
 $white: #FFFFFF;
 $black: #444444;
+
+// Responsiveness
+$lg: "only screen and (max-width: 1200px)";
+$md: "only screen and (max-width: 992px)";
+$sm: "only screen and (max-width: 768px)";
+$xs: "only screen and (max-width: 767px)";

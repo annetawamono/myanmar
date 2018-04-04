@@ -130,5 +130,31 @@ section.active {
     color: white;
     font-size: 32px;
     padding: 5px; }
+#selection #see-images {
+  writing-mode: vertical-rl;
+  text-orientation: sideways; }
+
+#gallery {
+  background-color: #444444;
+  position: absolute;
+  left: 33.33333333%;
+  top: 0;
+  display: none; }
+  @media only screen and (max-width: 1200px) {
+    #gallery {
+      left: 33.33333333%;
+      top: 0; } }
+  @media only screen and (max-width: 992px) {
+    #gallery {
+      left: 50%;
+      top: 0; } }
+  @media only screen and (max-width: 768px) {
+    #gallery {
+      left: 50%;
+      bottom: 0; } }
+  @media only screen and (max-width: 767px) {
+    #gallery {
+      left: 0;
+      top: 0; } }
 
 /*# sourceMappingURL=style.css.map */

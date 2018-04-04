@@ -1,3 +1,27 @@
 #gallery {
-  
+  background-color: $black;
+  position: absolute;
+  left: 33.33333333%;
+  top: 0;
+  display: none;
+
+  @media #{$lg} {
+    left: 33.33333333%;
+    top: 0;
+  }
+
+  @media #{$md} {
+    left: 50%;
+    top: 0;
+  }
+
+  @media #{$sm} {
+    left: 50%;
+    bottom: 0;
+  }
+
+  @media #{$xs} {
+    left: 0;
+    top: 0;
+  }
 }
