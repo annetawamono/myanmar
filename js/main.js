@@ -164,9 +164,76 @@ $(function() {
     }
   }
 
+  var gallery2Anim = anime.timeline({
+    autoplay: false
+  });
+
+  gallery2Anim.add({
+    targets: '#kw-gallery img',
+    scale: [0, 1],
+    opacity: [0,1],
+    easing: 'linear',
+    elasticity: 100,
+    duration: 500,
+    delay: function(el, i, l) { return i * 50; }
+  });
+
+  galleryAnim.push(gallery2Anim);
+
+  galleryAnim[1].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      let $fade = $('#back-to-map');
+      $('#gallery').animate({
+          width: 'toggle',
+        }, 500, function() {
+          $fade.fadeTo("fast", 0, function(){
+            $(this).addClass('hidden');
+            let $map = $('#see-images');
+            $map.removeClass('hidden');
+            $map.fadeTo("fast", 1);
+          });
+        });
+    }
+  }
+
+  var gallery3Anim = anime.timeline({
+    autoplay: false
+  });
+
+  gallery3Anim.add({
+    targets: '#mm-gallery img',
+    scale: [0, 1],
+    opacity: [0,1],
+    easing: 'linear',
+    elasticity: 100,
+    duration: 500,
+    delay: function(el, i, l) { return i * 50; }
+  });
+
+  galleryAnim.push(gallery3Anim);
+
+  galleryAnim[2].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      let $fade = $('#back-to-map');
+      $('#gallery').animate({
+          width: 'toggle',
+        }, 500, function() {
+          $fade.fadeTo("fast", 0, function(){
+            $(this).addClass('hidden');
+            let $map = $('#see-images');
+            $map.removeClass('hidden');
+            $map.fadeTo("fast", 1);
+          });
+        });
+    }
+  }
+
 
   // Opens gallery
   $('#see-images').click(function(){
+    $('section#gallery .gallery').removeClass('active');
+    $(selection[count%selection.length].gallery).addClass('active');
+
     let $fade = $(this);
     $('#gallery').animate({
       width: 'toggle',
@@ -176,19 +243,19 @@ $(function() {
         let $map = $('#back-to-map');
         $map.removeClass('hidden');
         $map.fadeTo("fast", 1);
-        if(gallery1Anim.reversed) {
-          gallery1Anim.reverse();
+        if(galleryAnim[count%galleryAnim.length].reversed) {
+          galleryAnim[count%galleryAnim.length].reverse();
         }
-        gallery1Anim.play();
+        galleryAnim[count%galleryAnim.length].play();
       });
     });
   });
 
   // Closes gallery
   $('#back-to-map').click(function(){
-    if(!gallery1Anim.reversed) {
-      gallery1Anim.reverse();
+    if(!galleryAnim[count%galleryAnim.length].reversed) {
+      galleryAnim[count%galleryAnim.length].reverse();
     }
-    gallery1Anim.play();
+    galleryAnim[count%galleryAnim.length].play();
   });
 });
