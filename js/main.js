@@ -1,7 +1,7 @@
 selection = [
-  {name: "yangon", marker: new Marker(16.786208, 96.152039), sub: "#sub-1"},
-  {name: "kalaw", marker: new Marker(20.624008, 96.569014), sub: "#sub-2"},
-  {name: "maymyo", marker: new Marker(21.993679, 96.469474), sub: "#sub-3"}
+  {name: "yangon", marker: new Marker(16.786208, 96.152039), sub: "#sub-1", gallery: "#yg-gallery"},
+  {name: "kalaw", marker: new Marker(20.624008, 96.569014), sub: "#sub-2", gallery: "#kw-gallery"},
+  {name: "maymyo", marker: new Marker(21.993679, 96.469474), sub: "#sub-3", gallery: "#mm-gallery"}
 ];
 var count = 0;
 
@@ -138,15 +138,31 @@ $(function() {
 
   gallery1Anim.add({
     targets: '#yg-gallery img',
-    rotateY: [-45,0],
+    scale: [0, 1],
     opacity: [0,1],
-    offset: '-=900',
-    easing: 'easeInCubic',
+    easing: 'linear',
     elasticity: 100,
+    duration: 500,
     delay: function(el, i, l) { return i * 50; }
   });
 
   galleryAnim.push(gallery1Anim);
+
+  galleryAnim[0].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      let $fade = $('#back-to-map');
+      $('#gallery').animate({
+          width: 'toggle',
+        }, 500, function() {
+          $fade.fadeTo("fast", 0, function(){
+            $(this).addClass('hidden');
+            let $map = $('#see-images');
+            $map.removeClass('hidden');
+            $map.fadeTo("fast", 1);
+          });
+        });
+    }
+  }
 
 
   // Opens gallery
@@ -160,22 +176,19 @@ $(function() {
         let $map = $('#back-to-map');
         $map.removeClass('hidden');
         $map.fadeTo("fast", 1);
+        if(gallery1Anim.reversed) {
+          gallery1Anim.reverse();
+        }
+        gallery1Anim.play();
       });
     });
   });
 
   // Closes gallery
   $('#back-to-map').click(function(){
-    let $fade = $(this);
-    $('#gallery').animate({
-      width: 'toggle',
-    }, 500, function() {
-      $fade.fadeTo("fast", 0, function(){
-        $(this).addClass('hidden');
-        let $map = $('#see-images');
-        $map.removeClass('hidden');
-        $map.fadeTo("fast", 1);
-      });
-    });
+    if(!gallery1Anim.reversed) {
+      gallery1Anim.reverse();
+    }
+    gallery1Anim.play();
   });
 });

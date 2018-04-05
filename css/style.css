@@ -188,7 +188,7 @@ section.active {
     display: none; }
     #gallery > div.active {
       display: block; }
-  #gallery #yg-gallery {
+  #gallery #yg-gallery, #gallery #kw-gallery, #gallery #mm-gallery {
     width: 95%;
     position: relative;
     left: 48px;
@@ -196,12 +196,12 @@ section.active {
     margin: 0;
     max-height: 95vh;
     overflow: scroll; }
-    #gallery #yg-gallery .row {
+    #gallery #yg-gallery .row, #gallery #kw-gallery .row, #gallery #mm-gallery .row {
       width: 100%; }
-      #gallery #yg-gallery .row > div {
+      #gallery #yg-gallery .row > div, #gallery #kw-gallery .row > div, #gallery #mm-gallery .row > div {
         padding: 5px;
         overflow: hidden; }
-    #gallery #yg-gallery img {
+    #gallery #yg-gallery img, #gallery #kw-gallery img, #gallery #mm-gallery img {
       width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
