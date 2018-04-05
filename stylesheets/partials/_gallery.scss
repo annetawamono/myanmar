@@ -22,7 +22,7 @@
 
   @media #{$xs} {
     left: 0;
-    top: 0;
+    bottom: 0;
   }
 
   #back-to-map {
@@ -41,6 +41,37 @@
     &:hover {
       color: $highlight;
       left: -54px;
+    }
+  }
+
+  > div {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  #yg-gallery {
+    width: 95%;
+    position: relative;
+    left: 48px;
+    top: -14px;
+    margin: 0;
+    max-height: 95vh;
+    overflow: scroll;
+
+    .row {
+      width: 100%;
+
+      > div {
+        padding: 5px;
+        overflow: hidden;
+      }
+    }
+
+    img {
+      width: 100%;
     }
   }
 }

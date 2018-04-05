@@ -129,6 +129,26 @@ $(function() {
 
   $('#map-nav .fa-arrow-circle-o-left').click(changeBack);
 
+  // Gallery Animations
+  var galleryAnim = [];
+
+  var gallery1Anim = anime.timeline({
+    autoplay: false
+  });
+
+  gallery1Anim.add({
+    targets: '#yg-gallery img',
+    rotateY: [-45,0],
+    opacity: [0,1],
+    offset: '-=900',
+    easing: 'easeInCubic',
+    elasticity: 100,
+    delay: function(el, i, l) { return i * 50; }
+  });
+
+  galleryAnim.push(gallery1Anim);
+
+
   // Opens gallery
   $('#see-images').click(function(){
     let $fade = $(this);
@@ -136,7 +156,10 @@ $(function() {
       width: 'toggle',
     }, 500, function() {
       $fade.fadeTo("fast", 0, function(){
-        $('#back-to-map').fadeTo("fast", 1);
+        $(this).addClass('hidden');
+        let $map = $('#back-to-map');
+        $map.removeClass('hidden');
+        $map.fadeTo("fast", 1);
       });
     });
   });
@@ -148,7 +171,10 @@ $(function() {
       width: 'toggle',
     }, 500, function() {
       $fade.fadeTo("fast", 0, function(){
-        $('#see-images').fadeTo("fast", 1);
+        $(this).addClass('hidden');
+        let $map = $('#see-images');
+        $map.removeClass('hidden');
+        $map.fadeTo("fast", 1);
       });
     });
   });

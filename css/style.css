@@ -143,6 +143,8 @@ section.active {
   #selection #see-images:hover {
     color: #CA7679;
     left: 95%; }
+  #selection #see-images.hidden {
+    display: none; }
 
 #gallery {
   background-color: #444444;
@@ -165,7 +167,7 @@ section.active {
   @media only screen and (max-width: 767px) {
     #gallery {
       left: 0;
-      top: 0; } }
+      bottom: 0; } }
   #gallery #back-to-map {
     transform: rotate(-90deg);
     position: relative;
@@ -182,5 +184,24 @@ section.active {
     #gallery #back-to-map:hover {
       color: #CA7679;
       left: -54px; }
+  #gallery > div {
+    display: none; }
+    #gallery > div.active {
+      display: block; }
+  #gallery #yg-gallery {
+    width: 95%;
+    position: relative;
+    left: 48px;
+    top: -14px;
+    margin: 0;
+    max-height: 95vh;
+    overflow: scroll; }
+    #gallery #yg-gallery .row {
+      width: 100%; }
+      #gallery #yg-gallery .row > div {
+        padding: 5px;
+        overflow: hidden; }
+    #gallery #yg-gallery img {
+      width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
