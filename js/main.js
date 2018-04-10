@@ -1,7 +1,7 @@
 selection = [
-  {name: "yangon", marker: new Marker(16.786208, 96.152039), sub: "#sub-1"},
-  {name: "kalaw", marker: new Marker(20.624008, 96.569014), sub: "#sub-2"},
-  {name: "maymyo", marker: new Marker(21.993679, 96.469474), sub: "#sub-3"}
+  {name: "yangon", marker: new Marker(16.786208, 96.152039), sub: "#sub-1", gallery: "#yg-gallery"},
+  {name: "kalaw", marker: new Marker(20.624008, 96.569014), sub: "#sub-2", gallery: "#kw-gallery"},
+  {name: "maymyo", marker: new Marker(21.993679, 96.469474), sub: "#sub-3", gallery: "#mm-gallery"}
 ];
 var count = 0;
 
@@ -128,4 +128,134 @@ $(function() {
   $('#map-nav .fa-arrow-circle-o-right').click(changeForward);
 
   $('#map-nav .fa-arrow-circle-o-left').click(changeBack);
+
+  // Gallery Animations
+  var galleryAnim = [];
+
+  var gallery1Anim = anime.timeline({
+    autoplay: false
+  });
+
+  gallery1Anim.add({
+    targets: '#yg-gallery img',
+    scale: [0, 1],
+    opacity: [0,1],
+    easing: 'linear',
+    elasticity: 100,
+    duration: 500,
+    delay: function(el, i, l) { return i * 50; }
+  });
+
+  galleryAnim.push(gallery1Anim);
+
+  galleryAnim[0].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      let $fade = $('#back-to-map');
+      $('#gallery').animate({
+          width: 'toggle',
+        }, 500, function() {
+          $fade.fadeTo("fast", 0, function(){
+            $(this).addClass('hidden');
+            let $map = $('#see-images');
+            $map.removeClass('hidden');
+            $map.fadeTo("fast", 1);
+          });
+        });
+    }
+  }
+
+  var gallery2Anim = anime.timeline({
+    autoplay: false
+  });
+
+  gallery2Anim.add({
+    targets: '#kw-gallery img',
+    scale: [0, 1],
+    opacity: [0,1],
+    easing: 'linear',
+    elasticity: 100,
+    duration: 500,
+    delay: function(el, i, l) { return i * 50; }
+  });
+
+  galleryAnim.push(gallery2Anim);
+
+  galleryAnim[1].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      let $fade = $('#back-to-map');
+      $('#gallery').animate({
+          width: 'toggle',
+        }, 500, function() {
+          $fade.fadeTo("fast", 0, function(){
+            $(this).addClass('hidden');
+            let $map = $('#see-images');
+            $map.removeClass('hidden');
+            $map.fadeTo("fast", 1);
+          });
+        });
+    }
+  }
+
+  var gallery3Anim = anime.timeline({
+    autoplay: false
+  });
+
+  gallery3Anim.add({
+    targets: '#mm-gallery img',
+    scale: [0, 1],
+    opacity: [0,1],
+    easing: 'linear',
+    elasticity: 100,
+    duration: 500,
+    delay: function(el, i, l) { return i * 50; }
+  });
+
+  galleryAnim.push(gallery3Anim);
+
+  galleryAnim[2].update = function (anim) {
+    if(anim.reversed && anim.progress == 0) {
+      let $fade = $('#back-to-map');
+      $('#gallery').animate({
+          width: 'toggle',
+        }, 500, function() {
+          $fade.fadeTo("fast", 0, function(){
+            $(this).addClass('hidden');
+            let $map = $('#see-images');
+            $map.removeClass('hidden');
+            $map.fadeTo("fast", 1);
+          });
+        });
+    }
+  }
+
+
+  // Opens gallery
+  $('#see-images').click(function(){
+    $('section#gallery .gallery').removeClass('active');
+    $(selection[count%selection.length].gallery).addClass('active');
+
+    let $fade = $(this);
+    $('#gallery').animate({
+      width: 'toggle',
+    }, 500, function() {
+      $fade.fadeTo("fast", 0, function(){
+        $(this).addClass('hidden');
+        let $map = $('#back-to-map');
+        $map.removeClass('hidden');
+        $map.fadeTo("fast", 1);
+        if(galleryAnim[count%galleryAnim.length].reversed) {
+          galleryAnim[count%galleryAnim.length].reverse();
+        }
+        galleryAnim[count%galleryAnim.length].play();
+      });
+    });
+  });
+
+  // Closes gallery
+  $('#back-to-map').click(function(){
+    if(!galleryAnim[count%galleryAnim.length].reversed) {
+      galleryAnim[count%galleryAnim.length].reverse();
+    }
+    galleryAnim[count%galleryAnim.length].play();
+  });
 });

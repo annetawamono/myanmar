@@ -130,11 +130,85 @@ section.active {
     color: white;
     font-size: 32px;
     padding: 5px; }
+#selection #see-images {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  padding: 30px 10px 10px 10px;
+  position: relative;
+  left: 93%;
+  cursor: pointer;
+  -webkit-transition: left .3s ease-out, color .3s ease-out;
+  /* Safari */
+  transition: left .3s ease-out, color .3s ease-out; }
+  #selection #see-images:hover {
+    color: #CA7679;
+    left: 95%; }
+  #selection #see-images.hidden {
+    display: none; }
 
-#gallery > div {
-  width: 100%;
-  height: 100vh; }
-#gallery .carousel-caption {
-  bottom: 200px; }
+#gallery {
+  background-color: #444444;
+  position: absolute;
+  left: 33.33333333%;
+  top: 0;
+  display: none; }
+  @media only screen and (max-width: 1200px) {
+    #gallery {
+      left: 33.33333333%;
+      top: 0; } }
+  @media only screen and (max-width: 992px) {
+    #gallery {
+      left: 50%;
+      top: 0; } }
+  @media only screen and (max-width: 768px) {
+    #gallery {
+      left: 50%;
+      bottom: 0; } }
+  @media only screen and (max-width: 767px) {
+    #gallery {
+      left: 0;
+      bottom: 0; } }
+  #gallery #back-to-map {
+    transform: rotate(-90deg);
+    position: relative;
+    width: 126px;
+    left: -44px;
+    top: 61px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: left .3s ease-out, color .3s ease-out;
+    /* Safari */
+    transition: left .3s ease-out, color .3s ease-out; }
+    #gallery #back-to-map:hover {
+      color: #CA7679;
+      left: -54px; }
+  #gallery > div {
+    display: none; }
+    #gallery > div.active {
+      display: block; }
+  #gallery #yg-gallery, #gallery #kw-gallery, #gallery #mm-gallery {
+    width: 95%;
+    position: relative;
+    left: 48px;
+    top: -14px;
+    margin: 0;
+    max-height: 95vh;
+    overflow: scroll; }
+    #gallery #yg-gallery .row, #gallery #kw-gallery .row, #gallery #mm-gallery .row {
+      width: 100%; }
+      #gallery #yg-gallery .row > div, #gallery #kw-gallery .row > div, #gallery #mm-gallery .row > div {
+        padding: 0px 3px 0px 0px;
+        overflow: hidden; }
+    #gallery #yg-gallery img, #gallery #kw-gallery img, #gallery #mm-gallery img {
+      width: 100%;
+      cursor: pointer;
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      transition: filter .5s ease-in-out; }
+      #gallery #yg-gallery img:hover, #gallery #kw-gallery img:hover, #gallery #mm-gallery img:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0); }
 
 /*# sourceMappingURL=style.css.map */
