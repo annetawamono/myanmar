@@ -199,9 +199,16 @@ section.active {
     #gallery #yg-gallery .row, #gallery #kw-gallery .row, #gallery #mm-gallery .row {
       width: 100%; }
       #gallery #yg-gallery .row > div, #gallery #kw-gallery .row > div, #gallery #mm-gallery .row > div {
-        padding: 5px;
+        padding: 0px 3px 0px 0px;
         overflow: hidden; }
     #gallery #yg-gallery img, #gallery #kw-gallery img, #gallery #mm-gallery img {
-      width: 100%; }
+      width: 100%;
+      cursor: pointer;
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      transition: filter .5s ease-in-out; }
+      #gallery #yg-gallery img:hover, #gallery #kw-gallery img:hover, #gallery #mm-gallery img:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0); }
 
 /*# sourceMappingURL=style.css.map */

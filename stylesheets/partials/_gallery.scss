@@ -65,13 +65,22 @@
       width: 100%;
 
       > div {
-        padding: 5px;
+        padding: 0px 3px 0px 0px;
         overflow: hidden;
       }
     }
 
     img {
       width: 100%;
+      cursor: pointer;
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      transition: filter .5s ease-in-out;
+
+      &:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+      }
     }
   }
 }
