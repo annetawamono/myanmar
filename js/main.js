@@ -6,6 +6,13 @@ selection = [
 var count = 0;
 
 $(function() {
+  // Loading photos
+  $containers = $("#gallery div.row>div");
+  $containers.imagesLoaded()
+  .always( function( instance ) {
+    console.log('all images loaded');
+  });
+
   //  Intro Event Handlers
   $('#intro div.nav-buttons>i').click(navIntro);
 
