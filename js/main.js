@@ -4,6 +4,7 @@ selection = [
   {name: "maymyo", marker: new Marker(21.993679, 96.469474), sub: "#sub-3", gallery: "#mm-gallery"}
 ];
 var count = 0;
+var loader = 0;
 
 $(function() {
   // Loading photos
@@ -11,7 +12,23 @@ $(function() {
   $containers.imagesLoaded()
   .always( function( instance ) {
     console.log('all images loaded');
+    $('div.story.active').fadeOut("slow", function() {
+      $(this).removeClass("active");
+      $('div#part-1').fadeIn("slow", function() {
+        $(this).addClass("active");
+        $('#intro div.nav-buttons').removeClass("hidden");
+      });
+    });
+  })
+  .progress( function( instance, image ) {
+    console.log(loader++);
+    loading();
   });
+
+  // Loader
+  function loading() {
+    $("#loader h3").text(Math.round((loader/37)*100) + "%");
+  }
 
   //  Intro Event Handlers
   $('#intro div.nav-buttons>i').click(navIntro);

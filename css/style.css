@@ -88,6 +88,8 @@ section.active {
     text-align: center; }
     #intro div.nav-buttons i {
       font-size: 36px; }
+    #intro div.nav-buttons.hidden {
+      visibility: hidden; }
 
 #selection > div {
   height: 100vh;
